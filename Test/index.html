@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <scrip src="script.js" t>
+        </script>
+        <style>
+            img {
+                max-width: 100%
+            }
+            
+            body {
+                margin: 0;
+            }
+        </style>
+</head>
+
+<body>
+    <!-- <h1 id="header">Passbilder bei Google Earth</h1>
+    <button onclick="newjoke1()">Neuer Witz</button>
+    <button onclick="newjoke2()">Neuer Witz</button>
+    <p id="witz">Deine Mutter mach Passbilder bei Google Earth.</p> -->
+    <!-- 
+    <h1>Programmier Witze</h1>
+
+    <input id="namefield">
+    <button onclick='greefromtextfield()'>Grüsse</button>
+
+    <p id="greeting">
+
+    </p>
+
+    <script>
+        function greefromtextfield() {
+            let x = document.getElementById('namefield').value;
+            greet(x);
+        }
+
+        function greet(x) {
+            document.getElementById('greeting').innerHTML = `Hallo ${x}, wie geht es dir?`;
+        }
+    </script> -->
+
+    <!-- <input id="number1" type="nummber"></input>
+    <input id="number2" type="nummber"></input>
+    <button onclick="add()">Addieren</button>
+
+    <h1 id="headline"></h1>
+
+    <script>
+        function add() {
+            let myFirstNumber = +document.getElementById('number1').value;
+            let mySecondNumber = +document.getElementById('number2').value;
+            let result = myFirstNumber + mySecondNumber;
+
+            document.getElementById('headline').innerHTML = `Das Ergebniss is ${result}`;
+        }
+    </script> -->
+
+    <!-- <a onclick="deutsch()">Deutsch</a> <a onclick="english()">English</a>
+
+    <h1 id="headline">Hallo</h1>
+
+    <p id="text1">Hallo auf dieser tollen Seite</p>
+ -->
+
+
+
+    <!-- <button onclick="image1()">start</button> -->
+    <!-- The on onclick symbol exectues the the function when clicking the symbol-->
+
+
+
+    <img id=image src="" alt="">
+    <input id="inputfield" type="number" placeholder="Wie viele Sekunden?">
+    <button onclick="start()">Start</button>
+    <script>
+        let images = ['ABT66407481217810F4BA692477DC49435BFCFD51ABD1AA8ABC965E6FD8A0A7D0B5.jpg', 'code_coding_binary_code_abstract_patterns_112140_2048x1152.jpeg', 'ocean-final.jpg', 'istockphoto-501425344-170667a.jpg']; // list of src counted in index
+        let currentImage = 0;
+
+        function start() {
+            let millisecons = +document.getElementById('inputfield').value * 1000;
+
+            if (millisecons > 10000) {
+                alert('Bitte kleinere Zahl eingeben');
+            }
+
+            if (millisecons < 1000) {
+                alert('Bitte midenstens eine Seknde als Zeit angeben!');
+            } else {
+                showImage(currentImage)
+                currentImage++;
+
+                if (currentImage === 5) {
+                    currentImage = 0;
+                }
+            }
+
+
+            setTimeout(start, millisecons);
+        }
+
+        function showImage(i) {
+            document.getElementById('image').src = images[i];
+        }
+    </script>
+
+
+</body>
+
+</html>
