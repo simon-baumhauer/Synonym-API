@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const API_KEY = 'A7z7te1UTmKDAouZ14g2';
+
+        async function loadCourse() {
+            url = "https://data.nasdaq.com/api/v3/datasets/BITFINEX/LUNAF0USTF0?start_date=2022-01-31&end_date=2022-01-31&api_key=A7z7te1UTmKDAouZ14g2";
+            let response = await fetch(url);
+            let responseAsJson = await response.json();
+            console.log('API answers', responseAsJson['dataset']['data'][0][3])
+            showBitcoin(responseAsJson);
+        }
+
+        function showBitcoin(responseAsJson) {
+            let bitcoinToday = responseAsJson['dataset']['data'][0][3];
+            document.getElementById('bitcoinInUSDToday').innerHTML = bitcoinToday;
+        }
+    </script>
+</head>
+
+<body onload="loadCourse()">
+    <h1>Was kostet ein Bitcoin aktuell?</h1>
+
+    <div>Aktuell kostest ein Bticoin <b id="bitcoinInUSDToday"></b>USD</div>
+
+</body>
+
+</html>
