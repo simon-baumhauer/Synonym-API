@@ -1,0 +1,24 @@
+<mat-card>
+  <table class="user-table">
+    <tr>
+      <th>Name Customer</th>
+      <th>Status</th>
+      <th>Betrag</th>
+    </tr>
+    <tr *ngFor="let order of allOrders" 
+      [class.bg-green]="order.status == 'completed'"
+      [class.bg-red]="order.status == 'cancled'"
+      [routerLink]="['/orders/' + order.orderIdName]">
+      <td>{{ order.customer.firstName }} {{ order.customer.lastName }}</td>
+      <td>{{ order.status }}</td>
+      <td>{{ order.totalPrice }}€</td>
+      <td *ngIf="auth.isAdmin">
+        <mat-icon (click)="deleteOrder(order.orderIdName)">delete</mat-icon>
+        <!-- <button mat-mini-fab color="primary" (click)="deleteOrder(order.orderIdName)" class="button-class">
+          <mat-icon>delete</mat-icon>
+        </button> -->
+    </tr>
+  </table>
+
+</mat-card>
+

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+    <title>Lieferando</title>
+  </head>
+
+  <body>
+    <div id="overlay">
+      <div id="locationContainer" class="d-none">
+        <h3>Über das Restaurant</h3>
+        <span onclick="closeCont()">X</span>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.753734789454!2d12.404128815899453!3d51.334049279607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f844fc900003%3A0x207540b5b550413d!2sCroccante%20Restaurant%20Leipzig!5e0!3m2!1sde!2sge!4v1641798852883!5m2!1sde!2sge"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+        <h3>Lieferzeiten</h3>
+        <section class="deliverytimes">
+          <p>
+            <span>Montag</span><span>10:30 - 14:30<br />16:00 - 00:45</span>
+          </p>
+          <p>
+            <span>Dienstag</span><span>10:30 - 14:30<br />16:00 - 00:45</span>
+          </p>
+          <p>
+            <span>Mittwoch</span
+            ><span
+              >10:30 - 14:30 <br />
+              16:00 - 00:45</span
+            >
+          </p>
+          <p>
+            <span>Donnerstag</span
+            ><span
+              >10:30 - 14:30 <br />
+              16:00 - 00:45</span
+            >
+          </p>
+          <p>
+            <span>Freitag</span
+            ><span
+              >10:30 - 14:30 <br />
+              16:00 - 00:45</span
+            >
+          </p>
+          <p><span>Samstag</span><span>12:00 - 00:45</span></p>
+          <p><span>Sonntag</span><span>12:00 - 00:45</span></p>
+        </section>
+      </div>
+    </div>
+    <nav class="nav">
+      <img class="imglogo" src="img/de-lieferando.49537380.svg" alt="" />
+      <h2>Lilienstraße 3, 04315 Leipzig</h2>
+      <div class="nav_icons">
+        <a href=""><img class="language" src="img/deutschland.png" alt="" /></a>
+        <a href=""><img src="img/Bild1.svg" alt="" /></a>
+      </div>
+    </nav>
+
+    <div class="pageContainer">
+      <div class="menu">
+        <img src="img/pizza-gc77f6cab1_1280.jpg" alt="" />
+        <div class="menu-layout">
+          <div class="centerlogo">
+            <div class="logoContainer">
+              <img class="restaurantLogo" src="img/logo_465x320.png" alt="" />
+            </div>
+          </div>
+          <span class="header_menu">
+            <h1>Croccante Restaurant</h1>
+            <div class="infosection">
+              <div class="info" onclick="infoPopUp()">
+                <img src="img/info-circle-solid.svg" alt="" />
+              </div>
+            </div>
+          </span>
+          <div class="menuheader">
+            <section class="rewie">
+              <img src="img/star-solid.svg" alt="" />
+              <img src="img/star-solid.svg" alt="" />
+              <img src="img/star-solid.svg" alt="" />
+              <img src="img/star-solid.svg" alt="" />
+              <img src="img/star-regular.svg" alt="" />
+              <a href="">(1,3k Bewertungen)</a>
+            </section>
+          </div>
+          <div class="foodtypes">
+            <img src="img/search-solid.svg" alt="" />
+            <a href="#favorites">Beliebte Gerichte</a>
+            <a href="#salad">Salate</a>
+            <a href="#pizza">Pizza</a>
+            <a href="#Pizzabread">Pizzabrot</a>
+            <a href="#pasta">Pasta</a>
+            <a href="#AlForno">Al Forno</a>
+            <a href="#puten_schnitzel">Puten-Schnitzel</a>
+          </div>
+          <div class="card">
+            <h2 id="favorites">Beliebte Gerichte</h2>
+          </div>
+          <div class="dishes">
+            <div>
+              <h3>Pizza Salami</h3>
+              <span class="dishesText"
+                >Wahl aus: Ø 32 cm oder 52cm x 32cm.</span
+              >
+              <span class="pricing">9,90 €</span>
+              <button onclick="addToBasket('Pizza Salami', '9.95')">+</button>
+            </div>
+            <div>
+              <h3>Cheeseburger</h3>
+              <span class="dishesText"
+                >mit 100g saftigem Rindfleischpatty, Käse, Hamburgersauce und
+                Ketchup</span
+              >
+              <span class="pricing">5,60 €</span>
+              <button onclick="addToBasket('Cheeseburger', '5.60')">+</button>
+            </div>
+            <div>
+              <h3>Crispy Chicken Burger</h3>
+              <span class="dishesText"
+                >Wahl aus: Ø 32 cm oder 52cm x 32cm.</span
+              >
+              <span class="pricing">9,90 €</span>
+              <button onclick="addToBasket('Crispy Chicken Burger', '7.20')">
+                +
+              </button>
+            </div>
+            <h2 id="salad">Salate</h2>
+            <div>
+              <h3>Salat Mista</h3>
+              <span class="dishesText"
+                >gemischter Salat der Saison mit Gurken, Tomaten und Möhren Wahl
+                aus: mit Essig-Öl-Dressing, mit Kräuter-Dressing oder ohne
+                Dressing.</span
+              >
+              <span class="pricing">9,90 €</span>
+              <button onclick="addToBasket('Salat Mista', '6.90')">+</button>
+            </div>
+            <div>
+              <h3>Salat Pomodoro e Rucola</h3>
+              <span class="dishesText"
+                >gemischter Salat der Saison mit Gurken, Tomaten und Möhren Wahl
+                aus: mit Essig-Öl-Dressing, mit Kräuter-Dressing oder ohne
+                Dressing.</span
+              >
+              <span class="pricing">7,80 €</span>
+              <button onclick="addToBasket('Salat Pomodoro e Rucola', '7.80')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Salat Caprese</h3>
+              <span class="dishesText"
+                >gemischter Salat der Saison mit Gurken, Tomaten und Möhren Wahl
+                aus: mit Essig-Öl-Dressing, mit Kräuter-Dressing oder ohne
+                Dressing.</span
+              >
+              <span class="pricing">8,50 €</span>
+              <button onclick="addToBasket('Salat Caprese', '8.50')">+</button>
+            </div>
+            <div>
+              <h3>Krautsalat</h3>
+              <span class="dishesText"
+                >gemischter Salat der Saison mit Gurken, Tomaten und Möhren Wahl
+                aus: mit Essig-Öl-Dressing, mit Kräuter-Dressing oder ohne
+                Dressing.</span
+              >
+              <span class="pricing">9,00 €</span>
+              <button onclick="addToBasket('Krautsalat', '9.00')">+</button>
+            </div>
+            <div>
+              <h3>Salat Feta</h3>
+              <span class="dishesText"
+                >gemischter Salat der Saison mit Gurken, Tomaten und Möhren Wahl
+                aus: mit Essig-Öl-Dressing, mit Kräuter-Dressing oder ohne
+                Dressing.</span
+              >
+              <span class="pricing">9,20 €</span>
+              <button onclick="addToBasket('Salat Feta', '9.20')">+</button>
+            </div>
+            <div>
+              <h3>Salat Pollo</h3>
+              <span class="dishesText"
+                >gemischter Salat der Saison mit Gurken, Tomaten und Möhren Wahl
+                aus: mit Essig-Öl-Dressing, mit Kräuter-Dressing oder ohne
+                Dressing.</span
+              >
+              <span class="pricing">9,45 €</span>
+              <button onclick="addToBasket('Salat Pollo', '9.45')">+</button>
+            </div>
+            <div>
+              <h3>Salat Calamri</h3>
+              <span class="dishesText"
+                >gemischter Salat der Saison mit Gurken, Tomaten und Möhren Wahl
+                aus: mit Essig-Öl-Dressing, mit Kräuter-Dressing oder ohne
+                Dressing.</span
+              >
+              <span class="pricing">10,00 €</span>
+              <button onclick="addToBasket('Salat Calamri', '10.00')">+</button>
+            </div>
+            <div>
+              <h3>Salat Gamberetto</h3>
+              <span class="dishesText"
+                >gemischter Salat der Saison mit Gurken, Tomaten und Möhren Wahl
+                aus: mit Essig-Öl-Dressing, mit Kräuter-Dressing oder ohne
+                Dressing.</span
+              >
+              <span class="pricing">11,45 €</span>
+              <button onclick="addToBasket('Salat Gamberetto', '11.45')">
+                +
+              </button>
+            </div>
+            <h2 id="pizza">Pizza</h2>
+            <div>
+              <h3>Pizza Margherita</h3>
+              <span class="dishesText"
+                >Wahl aus: Ø 32 cm oder 52cm x 32cm.</span
+              >
+              <span class="pricing">8,50 €</span>
+              <button onclick="addToBasket('Pizza Margherita', '8.50')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Pizza Salami</h3>
+              <span class="dishesText"
+                >Wahl aus: Ø 32 cm oder 52cm x 32cm.</span
+              >
+              <span class="pricing">9,90 €</span>
+              <button onclick="addToBasket('Pizza Salami', '9.90')">+</button>
+            </div>
+            <div>
+              <h3>Pizza Prosciutto</h3>
+              <span class="dishesText"
+                >Wahl aus: Ø 32 cm oder 52cm x 32cm.</span
+              >
+              <span class="pricing">10,00 €</span>
+              <button onclick="addToBasket('Pizza Prosciutto', '10.00')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Pizza Spinaci</h3>
+              <span class="dishesText"
+                >Wahl aus: Ø 32 cm oder 52cm x 32cm.</span
+              >
+              <span class="pricing">9,80€</span>
+              <button onclick="addToBasket('Pizza Spinaci', '9.80')">+</button>
+            </div>
+            <div>
+              <h3>Pizza Rucola</h3>
+              <span class="dishesText"
+                >Wahl aus: Ø 32 cm oder 52cm x 32cm.</span
+              >
+              <span class="pricing">9,80 €</span>
+              <button onclick="addToBasket('Pizza Rucola', '9.80')">+</button>
+            </div>
+            <div>
+              <h3>Pizza Tonno</h3>
+              <span class="dishesText"
+                >Wahl aus: Ø 32 cm oder 52cm x 32cm.</span
+              >
+              <span class="pricing">10,40 €</span>
+              <button onclick="addToBasket('Pizza Tonno', '10.40')">+</button>
+            </div>
+            <h2 id="Pizzabread">Pizzabrot</h2>
+            <div>
+              <h3>Pizzabrötchen (4Stück)</h3>
+              <span class="dishesText">gefüllt mit Schinken und Käse</span>
+              <span class="pricing">5,00 €</span>
+              <button onclick="addToBasket('Pizzabrötchen (4Stück)', '5.00')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Pizzabrötchen (10Stück)</h3>
+              <span class="dishesText">gefüllt mit Schinken und Käse</span>
+              <span class="pricing">10,00 €</span>
+              <button onclick="addToBasket('Pizzabrötchen (10Stück)', '10.00')">
+                +
+              </button>
+            </div>
+            <h2 id="pasta">Pasta</h2>
+            <div>
+              <h3>Spaghetti alla Genovese</h3>
+              <span class="dishesText"
+                >mit frischer Basilikumsauce, Pinienkernen, Olivenöl und
+                Parmesan</span
+              >
+              <span class="pricing">9.90</span>
+              <button onclick="addToBasket('Spaghetti alla Genovese', '9.90')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Penne Bacon</h3>
+              <span class="dishesText"
+                >mit frischer Basilikumsauce, Pinienkernen, Olivenöl und
+                Parmesan</span
+              >
+              <span class="pricing">9,90 €</span>
+              <button onclick="addToBasket('Penne Bacon', '9.90')">+</button>
+            </div>
+            <div>
+              <h3>Tagliatelle al Salomone</h3>
+              <span class="dishesText"
+                >mit frischer Basilikumsauce, Pinienkernen, Olivenöl und
+                Parmesan</span
+              >
+              <span class="pricing">10,60 €</span>
+              <button onclick="addToBasket('Tagliatelle al Salomone', '10.60')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Tagliatelle con Filetto</h3>
+              <span class="dishesText"
+                >mit frischer Basilikumsauce, Pinienkernen, Olivenöl und
+                Parmesan</span
+              >
+              <span class="pricing">11,20 €</span>
+              <button onclick="addToBasket('Tagliatelle con Filetto', '11.20')">
+                +
+              </button>
+            </div>
+            <h2 id="AlForno">Al Forno</h2>
+            <div>
+              <h3>Cannelloni</h3>
+              <span class="dishesText"
+                >mit frischer Basilikumsauce, Pinienkernen, Olivenöl und
+                Parmesan</span
+              >
+              <span class="pricing">12,90 €</span>
+              <button onclick="addToBasket('Cannelloni', '12.20')">+</button>
+            </div>
+            <div>
+              <h3>Lasagne al Forno</h3>
+              <span class="dishesText"
+                >mit frischer Basilikumsauce, Pinienkernen, Olivenöl und
+                Parmesan</span
+              >
+              <span class="pricing">11,00 €</span>
+              <button onclick="addToBasket('Lasagne al Forno', '11.00')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Spinaci-Lachs Lasagne</h3>
+              <span class="dishesText"
+                >mit frischer Basilikumsauce, Pinienkernen, Olivenöl und
+                Parmesan</span
+              >
+              <span class="pricing">12,00 €</span>
+              <button onclick="addToBasket('Spinaci-Lachs Lasagne', '12.00')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Broccoli-Zucchini-Auflauf</h3>
+              <span class="dishesText"
+                >Schichtnudeln mit Blattspinat und Mozzarella</span
+              >
+              <span class="pricing">9,00 €</span>
+              <button
+                onclick="addToBasket('Broccoli-Zucchini-Auflauf', '9.00')"
+              >
+                +
+              </button>
+            </div>
+            <h2 id="puten_schnitzel">Puten-Schnitzel</h2>
+            <div>
+              <h3>Puten-Schnitzel</h3>
+              <span class="dishesText"
+                >mit Champignons, Zwiebeln und Weißwein in Jägersauce</span
+              >
+              <span class="pricing">12,50 €</span>
+              <button onclick="addToBasket('Cheeseburger', '12.50')">+</button>
+            </div>
+            <div>
+              <h3>Hawaii-Schnitzel</h3>
+              <span class="dishesText"
+                >mit Champignons, Zwiebeln und Weißwein in Jägersauce</span
+              >
+              <span class="pricing">13,00 €</span>
+              <button onclick="addToBasket('Puten-Schnitzel', '12.00')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Schnitzel Mozzarella</h3>
+              <span class="dishesText"
+                >mit Champignons, Zwiebeln und Weißwein in Jägersauce</span
+              >
+              <span class="pricing">11,00 €</span>
+              <button onclick="addToBasket('Schnitzel Mozzarella', '11.00')">
+                +
+              </button>
+            </div>
+            <div>
+              <h3>Paprika-Schnitzel</h3>
+              <span class="dishesText"
+                >mit Champignons, Zwiebeln und Weißwein in Jägersauce</span
+              >
+              <span class="pricing">12,20 €</span>
+              <button onclick="addToBasket('Paprika-Schnitzel', '12.20')">
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="basket">
+        <h2>Warenkorb</h2>
+        <img src="img/shopping-basket-solid.svg" alt="" />
+        <div id="basketItems">
+          <div class="default-text">
+            <h3>Fülle deinen Warenkorb</h3>
+            <p>
+              Füge einige leckere Gerichte aus der Speisekarte hinzu und
+              bestelle dein Essen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"></footer>
+  </body>
+</html>

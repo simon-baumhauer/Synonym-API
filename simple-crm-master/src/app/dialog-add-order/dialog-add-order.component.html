@@ -1,0 +1,48 @@
+<div class="dialog-container">
+  <mat-progress-bar *ngIf="loading"
+    mode="indeterminate"></mat-progress-bar>
+  <h1 mat-dialog-title>Add Order</h1>
+  <div mat-dialog-content>
+    <div class="products">
+      <app-product *ngFor="let product of products; let i = index"
+        (numberChange)="changeNumber($event)"
+        [product]="product"
+        [productPosition]="i"
+        [edit]="true">
+      </app-product>
+    </div>
+
+    <div class="cust-price-div">
+      <mat-form-field appearance="fill">
+        <mat-label>Customer</mat-label>
+        <!-- Achtung: An [value] kann nur ein String übergeben werden und kein Objekt. Falls man in 
+          ein beliebiges Objekt als Wert eines <option> Tags in einem <select> verwenden möchte, muss
+          stattdessen [ngValue] verwendet werden: -->
+        <select matNativeControl required [(ngModel)]="selectedUser">
+          <option *ngFor="let user of allUsers"
+          [ngValue]="user">
+            {{user.firstName}} {{user.lastName}}
+          </option>
+        </select>
+      </mat-form-field>
+
+      <span>Total Price: {{totalPrice}}€</span>
+    </div>
+       
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button
+      (click)="dialogRef.close()"
+      [disabled]="loading">
+      Cancle
+    </button>
+    <button mat-button
+      (click)="saveOrder()"
+      [disabled]="loading"
+      cdkFocusInitial>
+      Save
+    </button>
+  </div>
+
+</div>

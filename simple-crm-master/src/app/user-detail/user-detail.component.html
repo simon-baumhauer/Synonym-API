@@ -1,0 +1,94 @@
+<mat-card class="user-detail-header">
+  <button mat-icon-button 
+    *ngIf="auth.isAdmin || auth.isSeller"
+    [matMenuTriggerFor]="userMenu"
+    class="pin-right-upper-corner">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+ <mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="editUser()">Edit</button>
+    <button mat-menu-item (click)="deleteUser()">Delete User</button>
+ </mat-menu>
+
+  <img src="./assets/img/1.webp">
+  <div class="user-details">
+    <h2>{{ currentUser.firstName }} {{ currentUser.lastName }}</h2> 
+    {{ currentUser.eMail }}
+  </div>
+</mat-card>
+
+<mat-card class="mt-32">
+  <button mat-icon-button 
+    *ngIf="auth.isAdmin || auth.isSeller"
+    [matMenuTriggerFor]="bankingMenu"
+    class="pin-right-upper-corner">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+ <mat-menu #bankingMenu="matMenu">
+    <button mat-menu-item (click)="editBanking()">Edit</button>
+ </mat-menu>
+  
+  <mat-card-title>IBAN</mat-card-title>
+  <mat-card-content>
+    {{ currentUser.IBAN}}
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-32">
+  <button mat-icon-button 
+    *ngIf="auth.isAdmin || auth.isSeller"
+    [matMenuTriggerFor]="addressMenu"
+    class="pin-right-upper-corner">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+ <mat-menu #addressMenu="matMenu">
+    <button mat-menu-item (click)="editAddress()">Edit</button>
+ </mat-menu>
+  
+  <mat-card-title>Address</mat-card-title>
+  <mat-card-content>
+    {{ currentUser.street}}
+    {{ currentUser.zipCode }} {{ currentUser.city }}
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-32">
+  <button mat-icon-button 
+    *ngIf="auth.isAdmin || auth.isSeller"
+    [matMenuTriggerFor]="BirthdayMenu"
+    class="pin-right-upper-corner">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+ <mat-menu #BirthdayMenu="matMenu">
+    <button mat-menu-item (click)="editBirthday()">Edit</button>
+ </mat-menu>
+  
+  <mat-card-title>Birthday</mat-card-title>
+  <mat-card-content>
+    {{ currentUserBirthDate }}
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-32">
+  <mat-card-title>Customer Statistics</mat-card-title>
+  <mat-card-content>
+    <table class="table">
+      <tr>
+        <th>Total Payments</th>
+        <th>Total Number Orders</th>
+        <th>Total Open Payments</th>
+      </tr>
+      <tr>
+        <td>{{ totalPayments }}€</td>
+        <td>{{ numberOrders }}</td>
+        <td [class.redColor]="openPayments > 0">{{ openPayments }}€</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
+

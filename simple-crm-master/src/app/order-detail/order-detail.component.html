@@ -1,0 +1,91 @@
+<mat-card class="user-detail-header">
+  <button mat-icon-button 
+    [matMenuTriggerFor]="userMenu"
+    *ngIf="(auth.isSeller || auth.isAdmin) && activOrder.status != 'completed'"
+    class="pin-right-upper-corner">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="editOrder()">Edit</button>
+  </mat-menu>
+  <mat-card-title>Shopping Cart</mat-card-title>
+  <div class="cart-div">
+    <app-product *ngFor="let product of products; let i = index"
+        [numberProduct]="activOrder.numberProductsInBasket[i]"
+        [product]="product"
+        [edit]="false">
+      </app-product>
+  </div>
+</mat-card>
+
+
+<mat-card class="mt-32 bill-card" 
+  [class.bg-green]="(activOrder.status == 'payed') || (activOrder.status == 'completed')"
+  [class.bg-red]="!((activOrder.status == 'payed') || (activOrder.status == 'completed'))">
+  
+  <mat-card-title>Bill <span class="bill-status">({{ getBillStatus(activOrder) }})</span></mat-card-title>
+  <mat-card-content>
+    <div class="border-bottom">
+      <span>{{ activOrder.customer.firstName }} {{ activOrder.customer.lastName }}</span> <br>
+      <span>{{ activOrder.customer.street }}</span> <br>
+      <span>{{ activOrder.customer.zipCode }} {{ activOrder.customer.city }}</span> <br>
+    </div>
+    <div>
+      <span>IBAN: {{ activOrder.customer.IBAN}}</span> <br>
+      <span>Total price: <b>{{ activOrder.totalPrice }}€</b></span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="button-box-box">
+    <div [matTooltip]="buttonMess('billCancle')" class="button-box">
+      <button mat-button
+        *ngIf="activOrder.status != 'completed' && activOrder.status != 'cancled'"
+        [disabled]="(!this.auth.isBanker && !this.auth.isAdmin) || (this.activOrder.status != 'payed')"
+        (click)="canclePayment()">
+        Cancle payment
+      </button>
+    </div>
+    <div [matTooltip]="buttonMess('billPay')" class="button-box">
+      <button mat-button
+        *ngIf="activOrder.status != 'completed' && activOrder.status != 'cancled'"
+        [disabled]="(!this.auth.isBanker && !this.auth.isAdmin) || (this.activOrder.status == 'payed') || (this.activOrder.status == 'completed') "
+        (click)="userPayed()"
+        cdkFocusInitial>
+        Recived payment
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+
+
+<mat-card class="mt-32">
+  
+  <mat-card-title>Shipping Information</mat-card-title>
+  <mat-card-content>
+    <span>{{ activOrder.customer.firstName }} {{ activOrder.customer.lastName }}</span> <br>
+    <span>{{ activOrder.customer.street }}</span> <br>
+    <span>{{ activOrder.customer.zipCode }} {{ activOrder.customer.city }}</span> <br>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="button-box-box">
+      <div class="button-box">
+        <button mat-button
+          *ngIf="activOrder.status != 'completed' && activOrder.status != 'cancled'"
+          [disabled]="(!this.auth.isSeller && !this.auth.isAdmin) || (this.activOrder.status == 'completed')"
+          (click)="cancleOrder()"
+          cdkFocusInitial>
+          Cancle Order
+        </button>
+      </div>
+      <div [matTooltip]="buttonMess('send')" class="button-box">
+        <button mat-button
+          *ngIf="activOrder.status != 'completed' && activOrder.status != 'cancled'"
+          [disabled]="(!this.auth.isSeller && !this.auth.isAdmin) || (this.activOrder.status != 'payed')"
+          (click)="sendOrder()"
+          cdkFocusInitial>
+          Send Order
+        </button>
+      </div>
+    </div>
+  </mat-card-actions>
+</mat-card>
+

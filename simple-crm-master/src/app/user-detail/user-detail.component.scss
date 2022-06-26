@@ -1,0 +1,90 @@
+.user-detail-header {
+  min-height: 250px;
+  background-color: orange;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+}
+
+.user-details {
+  height: 100px;
+  margin-left: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  h2 {
+    margin-bottom: 0;
+  }
+
+}
+
+
+.pin-right-upper-corner {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.bg-green {
+  background-color: rgba(116, 218, 116, 0.333);
+}
+
+.bg-red {
+  background-color: rgba(238, 125, 125, 0.306);
+}
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse; // Dies muss gemacht werden, damit man eine durchgezogene
+  // Linie erhält, wenn man den tr bzw. den th Tags eine border-bottom gibt!
+  
+  tr {
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.4);
+    &:last-child { // Unter dem letzten tr soll keine Linie mehr angezeigt werden.
+        border-bottom: 0;
+    }
+    th {
+      color: rgba($color: #000000, $alpha: 0.4);
+      font-size: 14px;
+      font-weight: 500;
+      text-align: start;
+      border-bottom: 1px solid rgba(0,0,0,0.4);
+      &:first-child {
+        padding-left: 16px;
+      }
+    }
+    td {
+      height: 48px;
+      &:first-child {
+        padding-left: 16px;
+      }
+    }
+  }
+  
+}
+
+.redColor {
+  color: red;
+}
+
+
+@media(max-width: 500px){
+  .user-detail-header{
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+
+
+
+

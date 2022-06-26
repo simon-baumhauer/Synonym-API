@@ -1,0 +1,35 @@
+.dialog-container {
+  position: relative;
+  mat-progress-bar {
+    position: absolute;
+    left: -24px;
+    right: -24px;
+    top: -24px;
+    width: calc(100% + 48px);
+  }
+}
+
+.cust-price-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+@media(max-width: 600px){
+  .cust-price-div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dialog-container {
+    width: 300px;
+  }
+}
+
+@media(max-width: 450px){
+  .dialog-container {
+    width: 250px;
+  }
+}
+

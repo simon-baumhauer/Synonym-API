@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+.nav {
+    background-color: #fb6100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+    z-index: 4;
+}
+
+.nav * {
+    padding: 10px;
+}
+
+.nav img {
+    width: 30px;
+}
+
+.nav>img {
+    min-width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav h2 {
+    color: white;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.nav * {
+    display: inline;
+}
+
+.nav_icons {
+    display: flex;
+    align-items: center;
+}
+
+.language {
+    padding: 0;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4.5rem;
+}
+
+.pageContainer h1 {
+    padding-right: 450px;
+}
+
+.menu-layout {
+    padding: 0px 20px;
+}
+
+.header_menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    min-height: 100vh;
+    width: 75%;
+}
+
+.menu>img {
+    height: 200px;
+    width: 100%;
+    object-fit: none;
+}
+
+.centerlogo {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.logoContainer img {
+    background-color: white;
+    width: 100px;
+}
+
+.logoContainer {
+    height: 125px;
+    width: 125px;
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+    top: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: solid 2px transparent;
+    box-shadow: 0 1px 5px #afadad;
+    overflow: auto;
+}
+
+.menuheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.infosection {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.infosection img {
+    width: 20px;
+}
+
+.info,
+.favorite {
+    padding: 0px 10px;
+    border: #e1e6e2 solid 1px;
+    display: flex;
+    cursor: pointer;
+}
+
+.info {
+    position: relative;
+    left: 1px;
+}
+
+.deliverytimes>p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rewie a {
+    color: #fb6100;
+    font-size: 14px;
+}
+
+.rewie img {
+    width: 15px;
+}
+
+.foodtypes img {
+    width: 15px;
+}
+
+.foodtypes {
+    padding: 30px 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.foodtypes * {
+    display: inline;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.foodtypes a {
+    text-decoration: none;
+    color: grey;
+}
+
+.foodtypes a:active {
+    color: #fb6100;
+    text-decoration: none;
+}
+
+.dishes h2 {
+    text-decoration: underline;
+}
+
+.dishes div {
+    border: 1px solid black;
+    position: relative;
+}
+
+.dishes div {
+    border: 1px solid grey;
+    position: relative;
+    margin: 5px 0px;
+    padding: 10px;
+}
+
+.dishesText {
+    color: grey;
+    font-size: 13px;
+}
+
+.dishes button {
+    color: blue;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0;
+    border: 0;
+}
+
+.pricing {
+    display: block;
+    color: #fb6100;
+    font-weight: 700;
+}
+
+.basket {
+    width: 25%;
+    border-left: solid 2px transparent;
+    box-shadow: 0 1px 5px #afadad;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.basket h2 {
+    width: 101%;
+    text-align: center;
+    padding: 15px 0px;
+    border-bottom: solid 1px transparent;
+    box-shadow: 0 1px 5px #afadad;
+    font-size: 16px;
+}
+
+.basket>img {
+    font-size: 16px;
+    margin: 50px 0 20px 0;
+    width: 30px;
+}
+
+.default-text p {
+    font-size: 14px;
+    color: grey;
+    padding: 0 30px;
+    margin-top: 10px;
+}
+
+.overlaystyle {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.locationContainer {
+    height: 500px;
+    width: 600px;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.locationContainer>section>span {
+    float: right;
+}
+
+.locationContainer h3 {
+    display: inline;
+    padding: 20px 5px;
+}
+
+.locationContainer p {
+    padding: 5px;
+}
+
+.locationContainer>span {
+    float: right;
+    font-weight: 700;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.locationContainer iframe {
+    width: 100%;
+    height: 300px;
+}
+
+.d-none {
+    display: none;
+}
+
+.basketItems {
+    width: 90%;
+}
+
+.basketItems>p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summation {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.summation>p {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.finalSum {
+    font-weight: 700;
+}
+
+.trashbin {
+    width: 15px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: blue;
+}
+
+@media only screen and (max-width: 950px) {
+    .pageContainer h1 {
+        padding-right: 350px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .pageContainer h1 {
+        padding-right: 250px;
+    }
+    .summation>p {
+        flex-direction: column;
+        align-items: baseline;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .pageContainer h1 {
+        padding-right: 150px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .pageContainer h1 {
+        padding-right: 0px;
+    }
+}
