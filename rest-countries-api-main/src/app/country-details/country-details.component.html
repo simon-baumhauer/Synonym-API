@@ -1,0 +1,65 @@
+<div class="center-container">
+  <div class="country-container">
+    <img src="{{ countries[message].flags.svg }}" alt="" />
+    <div class="flex-coulmn">
+      <h1>{{ countries[message].name }}</h1>
+      <div class="flex">
+        <div class="columns margin-right">
+          <div>
+            <span class="declaration">Native Name:</span
+            ><span class="input">{{ countries[message].nativeName }}</span>
+          </div>
+          <div>
+            <span class="declaration">Population:</span
+            ><span class="input">{{ countries[message].population }}</span>
+          </div>
+          <div>
+            <span class="declaration">Region:</span
+            ><span class="input">{{ countries[message].region }}</span>
+          </div>
+          <div>
+            <span class="declaration">Sub Region:</span
+            ><span class="input">{{ countries[message].subregion }}</span>
+          </div>
+          <div>
+            <span class="declaration">Capital:</span
+            ><span class="input">{{ countries[message].capital }}</span>
+          </div>
+        </div>
+        <div class="columns">
+          <div>
+            <span class="declaration">Top Level Domain:</span
+            ><span class="input">{{ countries[message].topLevelDomain }}</span>
+          </div>
+          <div>
+            <span class="declaration">Currencies:</span
+            ><span class="input">{{
+              countries[message].currencies[0].name
+            }}</span>
+          </div>
+          <div>
+            <span class="declaration">Languages:</span>
+            <div>
+              <span
+                class="input"
+                *ngFor="let item of countries[message].languages; index as i"
+                >{{ countries[message].languages[i].name }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="space-between">
+        <Span class="declaration">Border Countires:</Span>
+        <div>
+          <span
+            class="input"
+            *ngFor="let item of countries[message].borders; index as i"
+          >
+            {{ item }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
